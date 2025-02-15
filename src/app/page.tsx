@@ -8,6 +8,9 @@ const HomePage = () => {
       <Link href="/tickets" className="text-sm underline">
         Got to Tickets
       </Link>
+        <Link href={ticketsPath()} className="text-sm underline">
+          Go to Tickets
+        </Link>
     </div>
   );
 };
