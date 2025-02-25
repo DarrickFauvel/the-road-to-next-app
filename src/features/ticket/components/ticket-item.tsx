@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { LucideArrowUpRightFromSquare } from "lucide-react"
 import clsx from "clsx"
 import { Ticket } from "@prisma/client"
+import { deleteTicket } from "../actions/delete-ticket"
 
 type TicketItemProps = {
   ticket: Ticket
@@ -21,6 +22,11 @@ const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
       </Link>
     </Button>
   )
+
+  const handleDeleteTicket = async () => {
+    await deleteTicket(ticket.id)
+  }
+
 
   return (
     <div
