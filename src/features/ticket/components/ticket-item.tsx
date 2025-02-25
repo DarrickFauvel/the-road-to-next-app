@@ -4,19 +4,19 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { TICKET_ICONS } from "../constants";
-import Link from "next/link";
-import { ticketPath } from "@/paths";
-import { Ticket } from "../types";
-import { Button } from "@/components/ui/button";
-import { LucideArrowUpRightFromSquare } from "lucide-react";
-import clsx from "clsx";
+} from "@/components/ui/card"
+import { TICKET_ICONS } from "../constants"
+import Link from "next/link"
+import { ticketPath } from "@/paths"
+import { Button } from "@/components/ui/button"
+import { LucideArrowUpRightFromSquare } from "lucide-react"
+import clsx from "clsx"
+import { Ticket } from "@prisma/client"
 
 type TicketItemProps = {
-  ticket: Ticket;
-  isDetail?: boolean;
-};
+  ticket: Ticket
+  isDetail?: boolean
+}
 
 const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
   const detailButton = (
@@ -25,7 +25,7 @@ const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
         <LucideArrowUpRightFromSquare className="h-4 w-4" />
       </Link>
     </Button>
-  );
+  )
 
   return (
     <div
@@ -56,7 +56,7 @@ const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
         <div className="flex flex-col gap-y-1">{detailButton}</div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export { TicketItem };
+export { TicketItem }
