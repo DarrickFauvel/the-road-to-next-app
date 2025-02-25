@@ -1,10 +1,11 @@
 "use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { TICKET_ICONS } from "../constants"
 import Link from "next/link"
 import { ticketPath } from "@/paths"
 import { Button } from "@/components/ui/button"
-import { LucideArrowUpRightFromSquare } from "lucide-react"
+import { LucideArrowUpRightFromSquare, LucideTrash } from "lucide-react"
 import clsx from "clsx"
 import { Ticket } from "@prisma/client"
 import { deleteTicket } from "../actions/delete-ticket"
@@ -27,6 +28,11 @@ const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
     await deleteTicket(ticket.id)
   }
 
+  const deleteButton = (
+    <Button variant="outline" size="icon" onClick={handleDeleteTicket}>
+      <LucideTrash className="h-4 w-4" />
+    </Button>
+  )
 
   return (
     <div
@@ -53,9 +59,9 @@ const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
         </CardContent>
       </Card>
 
-      {isDetail ? null : (
-        <div className="flex flex-col gap-y-1">{detailButton}</div>
-      )}
+      <div className="flex flex-col gap-y-1">
+        {isDetail ? deleteButton : detailButton}
+      </div>
     </div>
   )
 }
