@@ -22,9 +22,6 @@ const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
     </Button>
   )
 
-  const handleDeleteTicket = async () => {
-    await deleteTicket(ticket.id)
-  }
 
   const deleteButton = (
     <form action={deleteTicket.bind(null, ticket.id)}>
