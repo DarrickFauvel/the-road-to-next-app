@@ -1,11 +1,11 @@
-import { LucideMessageSquareWarning } from "lucide-react";
-import { cloneElement } from "react";
+import { LucideMessageSquareWarning } from "lucide-react"
+import { cloneElement } from "react"
 
 type PlaceholderProps = {
-  label: string;
-  icon?: React.ReactElement;
-  button?: React.ReactElement;
-};
+  label: string
+  icon?: React.ReactElement<{ className?: string }>
+  button?: React.ReactElement<{ className?: string }>
+}
 
 const Placeholder = ({
   label,
@@ -22,7 +22,7 @@ const Placeholder = ({
         className: "h-10",
       })}
     </div>
-  );
-};
+  )
+}
 
-export { Placeholder };
+export { Placeholder }
