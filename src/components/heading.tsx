@@ -1,4 +1,3 @@
-import { Head } from "next/document";
 import { Separator } from "./ui/separator";
 
 type HeadingProps = {
